@@ -1,0 +1,20 @@
+.toast {
+  background-color: rgba(0, 0, 0, .65);
+  color: white;
+  padding: 16px 32px;
+  border-radius: 8px;
+  position: absolute;
+  font-size: 48px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* 居中 */
+  transition: opacity 0.5s ease;
+  z-index: 1000;
+  display: flex;
+}
+
+.toastContainer {
+  position: absolute;
+  top: 0;
+  left: 0;
+}

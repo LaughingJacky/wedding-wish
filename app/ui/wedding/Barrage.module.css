@@ -1,0 +1,31 @@
+.icoDialog {
+  background: url(./assets/dialog.svg);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  display: inline-block;
+}
+
+.confirmBtn {
+  background: url(./assets/btn-send.svg);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  display: inline-block;
+}
+
+.closeBtn {
+  background: url(./assets/btn-close.svg);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  display: inline-block;
+}
+
+.wishItem {
+  display: inline-block;
+  background: rgba(0, 0, 0, 0.3);
+  font-size: 20PX;
+  line-height: 30PX;
+  color: #fff;
+  padding: 6px 40px;
+  border-radius: 90px;
+  margin-bottom: 8PX;
+}

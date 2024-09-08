@@ -80,5 +80,12 @@ module.exports = {
         node: true,
       },
     },
+
+    // custom
+    {
+      "rules": {
+        "jsx-a11y/media-has-caption": 0
+      }
+    }
   ],
 };

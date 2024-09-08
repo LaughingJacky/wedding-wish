@@ -1,0 +1,34 @@
+.photoViewer {
+  overflow: hidden;
+}
+
+.slider {
+  position: relative;
+}
+
+.content {
+  margin-bottom: 24px;
+}
+
+.dots {
+  display: flex;
+  justify-content: center;
+}
+
+.dot {
+  width: 22.22px;
+  height: 22px;
+  background-image: url(../wedding/assets/dot-heart.svg);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  margin: 0 6px;
+  cursor: pointer;
+}
+
+.dot:focus {
+  outline: none;
+}
+
+.dot.active {
+  background-image: url(../wedding/assets/dot-heart-active.svg);
+}

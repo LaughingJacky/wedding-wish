@@ -1,0 +1,116 @@
+.icoCalendar {
+  background-image: url(./assets/calendar-1.gif);
+}
+
+.birdLeft {
+  background-image: url(./assets/bird-1-left.gif);
+}
+
+.birdRight {
+  background-image: url(./assets/bird-1-right.gif);
+}
+
+.wave {
+  background-image: url(./assets/wave-1.gif);
+}
+
+.birdTwo {
+  background-image: url(./assets/bird-1-left.gif);
+}
+
+.waveTwo {
+
+}
+
+.slideTwoPhotoViewer {
+  position: absolute;
+  top: 813px;
+  width: 674px;
+  height: 557px;
+  left: 38px;
+}
+
+.slideTwoPhotoViewerContent {
+  background-image: url(./assets/photo-viewer-bg.jpg);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  width: 674px;
+  height: 503px;
+  padding: 20px;
+}
+
+.slideTwoPhotoItem {
+  display: inline-block;
+  width: 307px;
+  height: 458px;
+}
+
+.photoViewItem {
+  overflow: hidden;
+  position: relative;
+}
+
+.previewModal {
+  background: rgba(0, 0, 0, 0.9) !important;
+
+  .previewModalContent {
+    background: transparent !important;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.chimesThree {
+  background-image: url(./assets/chimes-3.gif);
+}
+
+.waveThreeBoy {
+  background-image: url(./assets/wave-3-boy.gif);
+}
+
+.waveThreeGirl {
+  background-image: url(./assets/wave-3-girl.gif);
+}
+
+.slideThreePhotoItem {
+  display: inline-block;
+  width: 340px;
+  height: 510px;
+  border-radius: 16px;
+  object-fit: cover;
+  object-position: 50%;
+}
+
+.slideThreePhotoViewer {
+  position: absolute;
+  top: 813px;
+  height: 564px;
+  width: 100%;
+}
+
+.slideThreePhotoViewerContent {
+  height: 510px;
+  margin-bottom: 34px !important;
+}
+
+.popFour {
+  background-image: url(./assets/pop-4.gif);
+}
+
+.thankYou {
+  background-image: url(./assets/slide-6-thankyou.svg);
+}
+
+.date {
+  background-image: url(https://images.ctfassets.net/49fdbwmpdowy/4VldhD6hgg5LBI2ctfdcpg/3d0d46b5ba3667a36cde1e917ae216ec/slide-6-description.png);  
+}
+
+.boyAddress {
+  margin-top: 394px;
+  margin-left: 55px;
+}
+
+.girlAddress {
+  margin-top: 331px;
+  margin-left: 55px;
+}
