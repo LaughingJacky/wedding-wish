@@ -154,7 +154,11 @@ export const Slides = ({onSwipe}: {
         }}
       >
         {
-          SLIDE_2_SMALL_PHOTO_GROUP.map((url, index) => <div className={styles.photoViewItem} onClick={() => onClickSlideTwoPhoto(index)}>
+          SLIDE_2_SMALL_PHOTO_GROUP.map((url, index) => <div
+            className={styles.photoViewItem}
+            onClick={() => onClickSlideTwoPhoto(index)}
+          >
+            <i className={styles.icoExpand} />
             <img className={styles.slideTwoPhotoItem} src={url} />
           </div>)
         }
@@ -180,7 +184,10 @@ export const Slides = ({onSwipe}: {
         }}
       >
         {
-          SLIDE_3_SMALL_PHOTO_GROUP.map((url, index) => <div className={styles.photoViewItem} onClick={() => onClickSlideThreePhoto(index)}>
+          SLIDE_3_SMALL_PHOTO_GROUP.map((url, index) => <div
+            className={styles.photoViewItem}
+            onClick={() => onClickSlideThreePhoto(index)}>
+            <i className={styles.icoExpand} />
             <img className={styles.slideThreePhotoItem} src={url} />
           </div>)
         }

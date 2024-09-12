@@ -24,7 +24,7 @@
 
 .slideTwoPhotoViewer {
   position: absolute;
-  top: 813px;
+  top: 763px;
   width: 674px;
   height: 557px;
   left: 38px;
@@ -48,6 +48,17 @@
 .photoViewItem {
   overflow: hidden;
   position: relative;
+
+  .icoExpand {
+    position: absolute;
+    left: 16px;
+    top: 16px;
+    width: 36px;
+    height: 36px;
+    background: url(./assets/expand.png) center;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+  }
 }
 
 .previewModal {
@@ -83,7 +94,7 @@
 
 .slideThreePhotoViewer {
   position: absolute;
-  top: 813px;
+  top: 763px;
   height: 564px;
   width: 100%;
 }

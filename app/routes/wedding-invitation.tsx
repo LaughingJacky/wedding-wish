@@ -9,7 +9,7 @@ import { weiboImgAntiForbidden } from '~/utils/net';
 
 export async function loader() {
   return json({
-    API_AUTH: process.env.API_AUTH,
+    GH_TOKEN: process.env.GH_TOKEN,
   });
 }
 
@@ -64,22 +64,37 @@ const WeddingInvitation = () => {
   };
 
   const preloadResources = async () => {
-    const promises = Object.values(STATIC_FILES).map((file, index) => {
+    const promises = Object.values(STATIC_FILES).map((file) => {
       // 检查文件名是否以 "HD" 结尾，若是则跳过
       if (file.endsWith("HD")) {
         return Promise.resolve(true); // 直接返回已解决的 Promise
       }
   
-      return new Promise((resolve, reject) => {
-        const img = new Image();
-        img.src = file;
-        img.onload = () => {
-          setTimeout(() => {
-            resolve(true);
-          }, 100);
-        };
-        img.onerror = () => reject(new Error(`Failed to load image: ${file}`));
-      });
+      const loadImage = (retries = 3) => {
+        return new Promise((resolve, reject) => {
+          const img = new Image();
+          img.src = file;
+  
+          img.onload = () => {
+            setTimeout(() => {
+              resolve(true);
+            }, 100);
+          };
+  
+          img.onerror = () => {
+            if (retries > 0) {
+              console.warn(`Failed to load image: ${file}. Retrying... (${3 - retries + 1})`);
+              setTimeout(() => {
+                loadImage(retries - 1).then(resolve).catch(reject);
+              }, 100);
+            } else {
+              reject(new Error(`Failed to load image: ${file} after multiple attempts`));
+            }
+          };
+        });
+      };
+  
+      return loadImage();
     });
   
     return Promise.all(promises);
@@ -111,7 +126,7 @@ const WeddingInvitation = () => {
         <track kind="metadata" />
         Your browser does not support the audio element.
       </audio>
-      <Barrage onClickMessage={handlePlay} auth={data.API_AUTH!} />
+      <Barrage onClickMessage={handlePlay} token={data.GH_TOKEN!} />
       <Slides onSwipe={handlePlay} />
     </>
 

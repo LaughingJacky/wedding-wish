@@ -15,12 +15,12 @@ export const SLIDE_2_PHOTO_4_SMALL = weiboImgAntiForbidden('https://tvax2.sinaim
 export const SLIDE_2_PHOTO_5_SMALL = weiboImgAntiForbidden('https://tvax3.sinaimg.cn/large/6c9735b6gy1htfi6jdp2nj20h20pk77p.jpg');
 export const SLIDE_2_PHOTO_6_SMALL = weiboImgAntiForbidden('https://tvax3.sinaimg.cn/large/6c9735b6gy1htfi6qdo7oj20h20pktc3.jpg');
 
-export const SLIDE_2_PHOTO_1_HD = weiboImgAntiForbidden('https://tvax4.sinaimg.cn/large/6c9735b6gy1htggno3i0tj230n4iykjs.jpg');
-export const SLIDE_2_PHOTO_2_HD = weiboImgAntiForbidden('https://tvax1.sinaimg.cn/large/6c9735b6gy1htggocl30gj230n4iy4qy.jpg');
-export const SLIDE_2_PHOTO_3_HD = weiboImgAntiForbidden('https://tvax3.sinaimg.cn/large/6c9735b6gy1htggoz046dj230n4iyhe1.jpg');
-export const SLIDE_2_PHOTO_4_HD = weiboImgAntiForbidden('https://tvax2.sinaimg.cn/large/6c9735b6gy1htggtktvz1j230n4iye87.jpg');
-export const SLIDE_2_PHOTO_5_HD = weiboImgAntiForbidden('https://tvax3.sinaimg.cn/large/6c9735b6gy1htggu0zp78j230n4iye87.jpg');
-export const SLIDE_2_PHOTO_6_HD = weiboImgAntiForbidden('https://tvax4.sinaimg.cn/large/6c9735b6gy1htgguv45naj230u4j9qvb.jpg');
+export const SLIDE_2_PHOTO_1_HD = weiboImgAntiForbidden('https://tvax2.sinaimg.cn/large/6c9735b6gy1htgrk46wekj230n4iy1l0.jpg');
+export const SLIDE_2_PHOTO_2_HD = weiboImgAntiForbidden('https://tvax3.sinaimg.cn/large/6c9735b6gy1htgrkmilkrj230n4iynpg.jpg');
+export const SLIDE_2_PHOTO_3_HD = weiboImgAntiForbidden('https://tvax3.sinaimg.cn/large/6c9735b6gy1htfi60hkw7j20h20pkq6k.jpg');
+export const SLIDE_2_PHOTO_4_HD = weiboImgAntiForbidden('https://tvax2.sinaimg.cn/large/6c9735b6gy1htgrkt9odyj230n4iynpg.jpg');
+export const SLIDE_2_PHOTO_5_HD = weiboImgAntiForbidden('https://tvax3.sinaimg.cn/large/6c9735b6gy1htfi6jdp2nj20h20pk77p.jpg');
+export const SLIDE_2_PHOTO_6_HD = weiboImgAntiForbidden('https://tvax3.sinaimg.cn/large/6c9735b6gy1htfi6qdo7oj20h20pktc3.jpg');
 
 export const SLIDE_3_PHOTO_1_SMALL = weiboImgAntiForbidden('https://tvax2.sinaimg.cn/large/6c9735b6gy1htflpqva18j20a90scte5.jpg');
 export const SLIDE_3_PHOTO_2_SMALL = weiboImgAntiForbidden('https://tvax1.sinaimg.cn/large/6c9735b6gy1htflqpg3poj20iw0sc0va.jpg');
@@ -28,11 +28,11 @@ export const SLIDE_3_PHOTO_3_SMALL = weiboImgAntiForbidden('https://tvax1.sinaim
 export const SLIDE_3_PHOTO_4_SMALL = weiboImgAntiForbidden('https://tvax2.sinaimg.cn/large/6c9735b6gy1htflr4p5hlj20iw0sb413.jpg');
 export const SLIDE_3_PHOTO_5_SMALL = weiboImgAntiForbidden('https://tvax4.sinaimg.cn/large/6c9735b6gy1htflragffdj20ix0scac6.jpg');
 
-export const SLIDE_3_PHOTO_1_HD = weiboImgAntiForbidden('https://tvax4.sinaimg.cn/large/6c9735b6gy1htggx4dd6pj23344mou15.jpg');
-export const SLIDE_3_PHOTO_2_HD = weiboImgAntiForbidden('https://tvax2.sinaimg.cn/large/6c9735b6gy1htggxnl1r6j230n4iyx6w.jpg');
-export const SLIDE_3_PHOTO_3_HD = weiboImgAntiForbidden('https://tvax3.sinaimg.cn/large/6c9735b6gy1htggy3hp7ej230u4j9npk.jpg');
-export const SLIDE_3_PHOTO_4_HD = weiboImgAntiForbidden('https://tvax2.sinaimg.cn/large/6c9735b6gy1htggyf72m3j230u4j9e87.jpg');
-export const SLIDE_3_PHOTO_5_HD = weiboImgAntiForbidden('https://tvax3.sinaimg.cn/large/6c9735b6gy1htggysf3ygj230n4iyhdy.jpg');
+export const SLIDE_3_PHOTO_1_HD = weiboImgAntiForbidden('https://tvax1.sinaimg.cn/large/6c9735b6gy1htgrlk98znj23344moe86.jpg');
+export const SLIDE_3_PHOTO_2_HD = weiboImgAntiForbidden('https://tvax4.sinaimg.cn/large/6c9735b6gy1htgrlu41nzj230n4iy1l0.jpg');
+export const SLIDE_3_PHOTO_3_HD = weiboImgAntiForbidden('https://tvax1.sinaimg.cn/large/6c9735b6gy1htgrlzi3oxj230u4j94qs.jpg');
+export const SLIDE_3_PHOTO_4_HD = weiboImgAntiForbidden('https://tvax4.sinaimg.cn/large/6c9735b6gy1htgrm537o0j230u4j97wj.jpg');
+export const SLIDE_3_PHOTO_5_HD = weiboImgAntiForbidden('https://tvax4.sinaimg.cn/large/6c9735b6gy1htgrmb3xeaj230n4iyx6q.jpg');
 
 export const SLIDE_3_BOY = 'https://images.ctfassets.net/49fdbwmpdowy/2JzCYOsupmqXKPekuELy8i/fe85b530cd4e88869636c24855596c09/slide-3-person-boy.png';
 export const SLIDE_3_GIRL = 'https://images.ctfassets.net/49fdbwmpdowy/2spxMY19OTJUduq24GEdC5/6c3801158607cff87730fe485f04665e/slide-3-person-girl.png';

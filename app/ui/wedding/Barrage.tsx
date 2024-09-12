@@ -1,6 +1,5 @@
 import { useState, MouseEvent, useRef, useEffect } from 'react';
-import { json } from '@remix-run/node';
-import { useLoaderData } from '@remix-run/react';
+import { Octokit } from 'octokit';
 
 import styles from './Barrage.module.css';
 import { toast } from '../toast';
@@ -92,9 +91,9 @@ const InputDialog = ({ onConfirm, onCancel }: {
   );
 }
 
-export const Barrage = ({onClickMessage, auth}: {
+export const Barrage = ({onClickMessage, token}: {
   onClickMessage: () => void,
-  auth: string
+  token: string
 }) => {
   const [isDialogOpen, setIsDialogOpen] = useState(false);
   const [wishList, setWishList] = useState<WishMessage[]>([]);
@@ -102,20 +101,23 @@ export const Barrage = ({onClickMessage, auth}: {
   const scrollPositionRef = useRef(0); // 用于存储当前滚动位置
   const animationRef = useRef(0);
   const fetchWishListIntervalId = useRef(0);
+  const octokitRef = useRef(new Octokit({
+    auth: token
+  }));
 
   // Fetch wishlist function
   const fetchWishList = async () => {
     try {
-      const response = await fetch('https://api.shawbo.wang/blog/wishlist', {
-        method: 'GET',
-      });
+      const issuesRes = await octokitRef.current.request('GET /repos/LaughingJacky/wedding-wish/issues', {});
 
-      if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
+      if (issuesRes.status === 200) {
+        setWishList(issuesRes.data.map(({body, title}: any) => ({
+          nickname: title,
+          wish: body
+        })));
+      } else {
+        throw Error('留言拉取失败');
       }
-  
-      const result = await response.json();
-      setWishList(result);
     } catch (error) {
       console.error('Failed to fetch wishlist:', error instanceof Error ? error.message : 'unknown error');
       clearInterval(fetchWishListIntervalId.current); // 停止定时请求
@@ -138,27 +140,37 @@ export const Barrage = ({onClickMessage, auth}: {
 
   const confirmCloseDialog = async ({nickname, wish}: WishMessage) => {
     try {
-      const response = await fetch('https://api.shawbo.wang/blog/add-wish', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Authorization': auth
-        },
-        body: JSON.stringify({ nickname, wish })
+      const response = await octokitRef.current.request('POST /repos/LaughingJacky/wedding-wish/issues', {
+        title: nickname,
+        body: wish
       });
 
-      if (!response.ok) {
-        throw  new Error('网络错误');
-      }
+      // const response = await fetch(`https://api.shawbo.wang/blog/add-wish`, {
+      //   method: 'POST',
+      //   headers: {
+      //     'Content-Type': 'application/json',
+      //     'Authorization': auth
+      //   },
+      //   body: JSON.stringify({ nickname, wish })
+      // });
 
-      const result = await response.json();
+      // if (!response.ok) {
+      //   throw  new Error('网络错误');
+      // }
+
+      // const result = await response.json();
       setIsDialogOpen(false);
 
-      await fetchWishList();
+      if (response.status === 201) {
+        await fetchWishList();
 
-      toast.message({
-        msg: result.message
-      });
+        toast.message({
+          msg: '祝福收到了'
+        });
+      } else {
+        throw Error('出小差了')
+      }
+ 
     } catch (error) {
       setIsDialogOpen(false);
       toast.message({
@@ -175,7 +187,7 @@ export const Barrage = ({onClickMessage, auth}: {
       const containerHeight = scrollContainer.clientHeight;
 
       // 每次滚动的像素数
-      const scrollStep = 0.8; // 每次滚动1px
+      const scrollStep = 0.4; // 每次滚动1px
 
       // 更新滚动位置
       scrollPositionRef.current += scrollStep;
@@ -203,7 +215,7 @@ export const Barrage = ({onClickMessage, auth}: {
   }, [wishList]);
 
   return <div>
-    {wishList.length > 0 && <div ref={scrollContainerRef} className="fixed bottom-24 left-8 right-8 z-10 overflow-hidden h-[210px] pt-[42px]">
+    {wishList.length > 0 && <div ref={scrollContainerRef} className="fixed bottom-24 left-8 right-8 z-10 overflow-hidden h-[210px] pt-[42px] pb-[168px]">
       <div className="overflow-y-auto">
         {
           wishList.map(({nickname, wish}, index) => (

@@ -1,7 +1,7 @@
 declare global {
   interface Window {
     ENV: {
-      CDN_URL: string;
+      GH_TOKEN: string;
       // 你可以在这里添加更多的环境变量
     };
   }
